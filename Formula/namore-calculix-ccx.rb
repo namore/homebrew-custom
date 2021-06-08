@@ -10,8 +10,8 @@ class NamoreCalculixCcx < Formula
 
   depends_on "pkg-config" => :build
   depends_on "arpack"
-  depends_on "gcc" if OS.mac? # for gfortran
   depends_on "gfortran"
+  depends_on :macos
 
   resource "test" do
     url "http://www.dhondt.de/ccx_2.17.test.tar.bz2"
@@ -74,6 +74,7 @@ class NamoreCalculixCcx < Formula
   end
 end
 
+# internal version: 0
 __END__
 diff --git a/ccx_2.17/src/Makefile b/ccx_2.17/src/Makefile
 index 97ce9d1..632a617 100755
