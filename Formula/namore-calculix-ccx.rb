@@ -8,9 +8,9 @@ class NamoreCalculixCcx < Formula
   version "2.17"
   sha256 "ca708ad4aa729d9f84a9faba343c1bcc0b7cc84ed372616ebb55c8e6fa8f6e50"
 
+  depends_on :macos
   depends_on "pkg-config" => :build
   depends_on "arpack"
-  depends_on "gcc" if OS.mac? # for gfortran
   depends_on "gfortran"
 
   resource "test" do
