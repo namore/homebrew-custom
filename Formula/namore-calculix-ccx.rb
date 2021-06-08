@@ -1,4 +1,5 @@
-# Original version from homebrew-science, updated by namore to make it work with Version 2.17 on MacOS Big Sur and with M1 CPUs (which require GCC 11 or later)
+# Original version from homebrew-science, updated by namore to make it
+# work with Version 2.17 on MacOS Big Sur and with M1 CPUs (which require GCC 11 or later)
 
 class NamoreCalculixCcx < Formula
   desc "Three-Dimensional Finite Element Solver"
