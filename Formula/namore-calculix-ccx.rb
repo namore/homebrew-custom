@@ -74,6 +74,7 @@ class NamoreCalculixCcx < Formula
   end
 end
 
+# internal version: 0
 __END__
 diff --git a/ccx_2.17/src/Makefile b/ccx_2.17/src/Makefile
 index 97ce9d1..632a617 100755
