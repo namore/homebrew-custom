@@ -1,5 +1,6 @@
 # Original version from homebrew-science, updated by namore to make it
-# work with Version 2.17 on MacOS Big Sur and with M1 CPUs (which require GCC 11 or later)
+# 2021: work with Version 2.17 on MacOS Big Sur and with M1 CPUs (which require GCC 11 or later)
+# 2025/01: fixed build for Macos 15 Sequoia
 
 class NamoreCalculixCcx < Formula
   desc "Three-Dimensional Finite Element Solver"
@@ -39,6 +40,7 @@ class NamoreCalculixCcx < Formula
 
     # Patch spooles library
     inreplace "spooles/Make.inc", "/usr/lang-4.0/bin/cc", ENV.cc
+    inreplace "spooles/Make.inc", "CFLAGS = $(OPTLEVEL)", "CFLAGS = $(OPTLEVEL) -Wno-error=int-conversion"
     inreplace "spooles/Tree/src/makeGlobalLib", "drawTree.c", "tree.c"
 
     # Build serial spooles library
@@ -48,7 +50,7 @@ class NamoreCalculixCcx < Formula
     system "make", "-C", "spooles/MT/src", "makeLib"
 
     # Buid Calculix ccx
-    cflags = %w[-O2 -I../../spooles -DARCH=Linux -DSPOOLES -DARPACK -DMATRIXSTORAGE]
+    cflags = %w[-O2 -Wno-error=implicit-function-declaration -I../../spooles -DARCH=Linux -DSPOOLES -DARPACK -DMATRIXSTORAGE]
     libs = ["$(DIR)/spooles.a", "$(shell pkg-config --libs arpack)"]
     # ARPACK uses Accelerate on macOS
     libs << "-framework accelerate"
