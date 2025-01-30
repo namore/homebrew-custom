@@ -11,7 +11,7 @@ Installation is very simple:
 
     brew install namore/homebrew-custom/namore-calculix-ccx
 
-Then select the following Path under FreeCAD settings / FEM / CalculiX / cxx binary path::
+Then select the following Path under FreeCAD settings / FEM / CalculiX / ccx binary path::
 
     /opt/homebrew/bin/ccx_2.17
 
