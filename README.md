@@ -1,26 +1,30 @@
-# Namore Custom
+# Namore Custom Tap
 
-## Notable Formulae
+Custom Homebrew tap for engineering tools.
 
-### CalculiX for MacOS
+## Formulae
 
-Forked and updated, you can install CalculiX on any modern MacOS (even with M1 chip).
-I use it successfully for FEM simulations with FreeCAD on MacOS.
+| Formula | Description | Install |
+| --- | --- | --- |
+| `calculix-ccx` | Three-dimensional finite element solver (CalculiX CCX). | `brew install namore/custom/calculix-ccx` |
 
-Installation is very simple:
+## Installation
 
-    brew install namore/homebrew-custom/namore-calculix-ccx
+One-step install:
 
-Then select the following Path under FreeCAD settings / FEM / CalculiX / ccx binary path::
+    brew install namore/custom/calculix-ccx
 
-    /opt/homebrew/bin/ccx_2.17
+Or tap first, then install:
 
-## General instructions: How do I install these formulae?
+    brew tap namore/custom
+    brew install calculix-ccx
 
-`brew install namore/custom/<formula>`
+## FreeCAD configuration
 
-Or `brew tap namore/custom` and then `brew install <formula>`.
+In FreeCAD (`Settings -> FEM -> CalculiX -> ccx binary path`), set:
+
+    $(brew --prefix)/bin/ccx_2.17
 
 ## Documentation
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+`brew help`, `man brew`, and [Homebrew documentation](https://docs.brew.sh).

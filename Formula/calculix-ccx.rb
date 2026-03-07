@@ -2,9 +2,9 @@
 # 2021: work with Version 2.17 on MacOS Big Sur and with M1 CPUs (which require GCC 11 or later)
 # 2025/01: fixed build for Macos 15 Sequoia
 
-class NamoreCalculixCcx < Formula
+class CalculixCcx < Formula
   desc "Three-Dimensional Finite Element Solver"
-  homepage "http://www.calculix.de/"
+  homepage "https://www.calculix.de/"
   url "http://www.dhondt.de/ccx_2.17.src.tar.bz2"
   version "2.17"
   sha256 "ca708ad4aa729d9f84a9faba343c1bcc0b7cc84ed372616ebb55c8e6fa8f6e50"
@@ -50,7 +50,8 @@ class NamoreCalculixCcx < Formula
     system "make", "-C", "spooles/MT/src", "makeLib"
 
     # Buid Calculix ccx
-    cflags = %w[-O2 -Wno-error=implicit-function-declaration -I../../spooles -DARCH=Linux -DSPOOLES -DARPACK -DMATRIXSTORAGE]
+    cflags = %w[-O2 -Wno-error=implicit-function-declaration -I../../spooles -DARCH=Linux -DSPOOLES -DARPACK
+                -DMATRIXSTORAGE]
     libs = ["$(DIR)/spooles.a", "$(shell pkg-config --libs arpack)"]
     # ARPACK uses Accelerate on macOS
     libs << "-framework accelerate"
