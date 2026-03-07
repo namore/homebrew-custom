@@ -8,6 +8,10 @@ Custom Homebrew tap for engineering tools.
 | --- | --- | --- |
 | `calculix-ccx` | Three-dimensional finite element solver (CalculiX CCX). | `brew install namore/custom/calculix-ccx` |
 
+## Compatibility
+
+Confirmed working on macOS 26.
+
 ## Installation
 
 One-step install:
