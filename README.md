@@ -27,7 +27,7 @@ Or tap first, then install:
 
 In FreeCAD (`Settings -> FEM -> CalculiX -> ccx binary path`), set:
 
-    $(brew --prefix)/bin/ccx_2.17
+    $(brew --prefix)/bin/ccx_2.23
 
 ## Documentation
 
